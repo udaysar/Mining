@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Stock List </h1>
+    <ul>
+        {% for stock in stocks %}
+            <li><a href="{% url 'stock_detail' stock.pk %}">{{stock.name}}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'stock_create'%}" class="btn btn-primary">Create New Stock</a>
+{% endblock  %}
